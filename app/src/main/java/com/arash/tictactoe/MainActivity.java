@@ -26,9 +26,6 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void clickFunction(View view){
 
-
-        // winningPositions [1]= new  int[] {0,0,0};
-        //gameState[winningPositions[0[0]]]=gameState[winningPositions[0[1]]] ;
         ImageView img16 = (ImageView) findViewById(R.id.imageView16);
         ImageView img17 = (ImageView) findViewById(R.id.imageView17);
         EditText playerTwo = (EditText) findViewById(R.id.txtPlayerTwo);
@@ -59,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
                 img16.setImageResource(R.drawable.circle);
                 img17.setImageResource(R.drawable.cross2);
             }
-            //button.animate().translationYBy(1000f);
             button.animate().scaleY(1f);
             button.animate().scaleX(1f);
             button.animate().rotation(360f).setDuration(1000);
@@ -68,15 +64,13 @@ public class MainActivity extends AppCompatActivity {
             if(gameState[winningPositions[0]] == gameState[winningPositions[1]] &&
                     gameState[winningPositions[1]] == gameState[winningPositions[2]] &&
                     gameState[winningPositions[0]] != 2 ){
-                // EditText playerTwo = (EditText) findViewById(R.id.txtPlayerTwo);
-                // EditText playerOne = (EditText) findViewById(R.id.txtPlayerOne);
 
                 String winner =playerTwo.getText().toString();
                 if (gameState[winningPositions[0]]==0)
                     // winner="Circle";
                     winner=playerOne.getText().toString();
 
-                //System.out.println(gameState[winningPositions[0]]);
+
                 TextView txtWinner = (TextView) findViewById(R.id.txtWinner);
                 txtWinner.setText(winner +"\n Has Won");
 
@@ -112,10 +106,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        //System.out.println(Arrays.toString(winningPositions[1]));
-
-
-
     }
     public void playAgainFunction  (View view){
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.layoutContainer);
@@ -128,20 +118,7 @@ public class MainActivity extends AppCompatActivity {
             gameState[i]=2;
         }
         gameIsActive=true;
-      /*  ConstraintLayout co = (ConstraintLayout) findViewById(R.id.constrainLayout);
 
-        for(int i=0;i<co.getChildCount();i++){
-            ((ImageView) co.getChildAt(i)).setImageResource(0);
-
-        }
-
-
-        GridLayout g = (GridLayout) findViewById(R.id.gridLayoutGeneral);
-
-        for (int i=0 ; i<g.getChildCount();i++) {
-            ((ImageView) g.getChildAt(i)).setImageResource(0);
-        }
-        */
         ImageView img2 = (ImageView) findViewById(R.id.imageView2);
         img2.setImageResource(0);
         ImageView img3 = (ImageView) findViewById(R.id.imageView5);
